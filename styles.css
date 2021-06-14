@@ -1,0 +1,57 @@
+* {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1vw;
+}
+
+#container {
+    border: solid black 0px; 
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    border-bottom: rgb(224, 224, 224) solid .5px;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.rank {
+    width: 10%;
+}
+
+.country {
+    width: 10%;
+    float: left;
+    text-align: right;
+
+}
+
+.athlete {
+    width: 30%
+
+}
+
+.result {
+    width: 20%;
+
+}
+
+.points {
+    width: 10%;
+    text-align: center;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: rgb(224, 224, 224);
+    font-weight: bold;
+
+}
+
+@media only screen and (max-width: 480px) {
+    .athlete {
+        width: min-content;
+    }
+}
