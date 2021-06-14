@@ -111,7 +111,7 @@ const results8 = {
 
 const container = document.getElementById('container')
 
-const createTable = (() => {
+const createTable1 = (() => {
 
 
     for (let i = -1; i < results8["Results"].length; i++) {
@@ -144,6 +144,55 @@ const createTable = (() => {
             athlete.textContent = results8["Results"][i]["Athlete"]
             result.textContent = results8["Results"][i]["Result"]
             points.textContent = results8["Results"][i]["Points"]
+        }
+        
+        row.appendChild(rank)
+        row.appendChild(country)
+        row.appendChild(athlete)
+        row.appendChild(result)
+        row.appendChild(points)
+        container.appendChild(row)
+    
+    }
+})()
+
+const createTable2 = (() => {
+
+    let row = document.createElement('div')
+    row.className = "title2"
+    row.textContent = "1500m"
+    container.appendChild(row)
+
+    for (let i = -1; i < results10["results"].length; i++) {
+    
+
+        let row = document.createElement('div')
+        let rank = document.createElement('p')
+        let country = document.createElement('p')
+        let athlete = document.createElement('p')
+        let result = document.createElement('p')
+        let points = document.createElement('p')
+    
+        row.className = "row"
+        rank.className = "rank"
+        country.className = "country"
+        athlete.className = "athlete"
+        result.className = "result"
+        points.className = "points"
+    
+        if (i == -1) {
+            rank.textContent = "Rank"
+            country.textContent = "Country"
+            athlete.textContent = "Athlete"
+            result.textContent = "Result"
+            points.textContent = "Points"
+            row.className = "header"
+        } else {
+            rank.textContent = results10["results"][i]["Rank"]
+            country.textContent = results10["results"][i]["Country"]
+            athlete.textContent = results10["results"][i]["Athlete"]
+            result.textContent = results10["results"][i]["Time"]
+            points.textContent = results10["results"][i]["Points"]
         }
         
         row.appendChild(rank)
