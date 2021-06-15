@@ -119,6 +119,8 @@ const createTable1 = (() => {
 
         let row = document.createElement('div')
         let rank = document.createElement('p')
+        let countryAndFlag = document.createElement('div')
+        let flag = document.createElement('img')
         let country = document.createElement('p')
         let athlete = document.createElement('p')
         let result = document.createElement('p')
@@ -126,6 +128,8 @@ const createTable1 = (() => {
     
         row.className = "row"
         rank.className = "rank"
+        countryAndFlag.className = "countryAndFlag"
+        flag.className = "flag"
         country.className = "country"
         athlete.className = "athlete"
         result.className = "result"
@@ -140,6 +144,7 @@ const createTable1 = (() => {
             row.className = "header"
         } else {
             rank.textContent = results8["Results"][i]["Rank"]
+            flag.src = "./images/" + results8["Results"][i]["Country"] + ".svg"
             country.textContent = results8["Results"][i]["Country"]
             athlete.textContent = results8["Results"][i]["Athlete"]
             result.textContent = results8["Results"][i]["Result"]
@@ -147,7 +152,14 @@ const createTable1 = (() => {
         }
         
         row.appendChild(rank)
-        row.appendChild(country)
+
+        if (i == -1) {
+            row.appendChild(country)
+        } else {
+            row.appendChild(countryAndFlag)
+            countryAndFlag.appendChild(flag)
+            countryAndFlag.appendChild(country)
+        }
         row.appendChild(athlete)
         row.appendChild(result)
         row.appendChild(points)
@@ -168,6 +180,8 @@ const createTable2 = (() => {
 
         let row = document.createElement('div')
         let rank = document.createElement('p')
+        let countryAndFlag = document.createElement('div')
+        let flag = document.createElement('img')
         let country = document.createElement('p')
         let athlete = document.createElement('p')
         let result = document.createElement('p')
@@ -175,6 +189,8 @@ const createTable2 = (() => {
     
         row.className = "row"
         rank.className = "rank"
+        countryAndFlag.className = "countryAndFlag"
+        flag.className = "flag"
         country.className = "country"
         athlete.className = "athlete"
         result.className = "result"
@@ -184,11 +200,12 @@ const createTable2 = (() => {
             rank.textContent = "Rank"
             country.textContent = "Country"
             athlete.textContent = "Athlete"
-            result.textContent = "Result"
+            result.textContent = "Time"
             points.textContent = "Points"
             row.className = "header"
         } else {
             rank.textContent = results10["results"][i]["Rank"]
+            flag.src = "./images/" + results10["results"][i]["Country"] + ".svg"
             country.textContent = results10["results"][i]["Country"]
             athlete.textContent = results10["results"][i]["Athlete"]
             result.textContent = results10["results"][i]["Time"]
@@ -196,7 +213,14 @@ const createTable2 = (() => {
         }
         
         row.appendChild(rank)
-        row.appendChild(country)
+
+        if (i == -1) {
+            row.appendChild(country)
+        } else {
+            row.appendChild(countryAndFlag)
+            countryAndFlag.appendChild(flag)
+            countryAndFlag.appendChild(country)
+        }
         row.appendChild(athlete)
         row.appendChild(result)
         row.appendChild(points)
